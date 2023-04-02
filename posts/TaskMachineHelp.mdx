@@ -134,14 +134,14 @@ date: 2022/12/30
 
 ## Getting Started
 1. Imagine the Task Machine app as an NPC in a game. Its role is to provide you with a recommended task based on your current time and location, reduce unnecessary mental consumption, and let you focus more on the present. However, the Task Machine cannot create something out of nothing, so you need to add tasks first...
-2. Add tasks and set their conditions (time period and location) and importance for each task, and repeat this step.
+2. Add tasks and set their conditions (time period and location) and priority for each task, and repeat this step.
 3. Tell the Task Machine where you are, and it will provide you with a recommended task. Adjust the expected time, and click start.
 4. Long press "X" to end in advance, or after the countdown ends normally for one minute, you can press the button next to “ended” to extend the end time to the current time.
 
 <a name="anchor4"></a>
 
 ## The most recommended task
-1. This is the core of the software. After you tell the task machine where you are, the Task Machine app will filter out tasks that meet the current conditions based on the current time and location you selected. Then, among these filtered tasks, based on the time length from the last time each task was done to now and their importance, the app calculates the most recommended task. When you click Start, the time length for that task will be reset to 0. As time goes on, the time length will increase, which will be used as the basis for the next calculation.
+1. This is the core of the software. After you tell the task machine where you are, the Task Machine app will filter out tasks that meet the current conditions based on the current time and location you selected. Then, among these filtered tasks, based on the time length from the last time each task was done to now and their priority, the app calculates the most recommended task. When you click Start, the time length for that task will be reset to 0. As time goes on, the time length will increase, which will be used as the basis for the next calculation.
 2. Therefore, the task calculated by the Task Machine app must be a task **that has not been done for a while, is relatively important, and meets the current time and location**.
 3. However, no matter how the machine calculates it, **only the user knows best what they should do at the moment**. Therefore, you can switch to other tasks that meet the current conditions by clicking the button in the upper right corner of the recommended task view.
 ### Further discussion
@@ -157,8 +157,8 @@ You can adjust the parent-child relationship between tasks in the task list by *
 
 - Here, there are two parent tasks and their three sub-tasks, as well as one task without any sub-tasks.
 1. First, in order to ensure that all sub-tasks can be filtered out by the app when they meet their own conditions, the app must ensure that the parent task can also be filtered out. Therefore, the condition of the parent task is the union of all its sub-task conditions, and you cannot directly modify the condition of the parent task. It changes as the sub-task conditions change.
-2. The Task Machine app first filters out all parent tasks that meet the conditions and tasks without sub-tasks. Assuming that all three tasks above meet the current conditions, the app will pick the most recommended task based on the importance and time length from the last time the task was done to now.
-3. Suppose the most recommended task now is reading, then the Task Machine will calculate the time length and importance of each sub-task that meets the conditions again and find the most recommended one. After clicking Start, the time length of this sub-task and its parent task will be reset to 0.
+2. The Task Machine app first filters out all parent tasks that meet the conditions and tasks without sub-tasks. Assuming that all three tasks above meet the current conditions, the app will pick the most recommended task based on the priority and time length from the last time the task was done to now.
+3. Suppose the most recommended task now is reading, then the Task Machine will calculate the time length and priority of each sub-task that meets the conditions again and find the most recommended one. After clicking Start, the time length of this sub-task and its parent task will be reset to 0.
 4. Suppose the most recommended task now is Project, then after clicking Start, the time length of that task will be reset to 0.
 
 #### Valid Record:
@@ -182,7 +182,7 @@ You can adjust the parent-child relationship between tasks in the task list by *
 3. When a parent task is turned off, all its subtasks will be turned off.
 4. When a subtask is turned on, its parent task will be forced to turn on.
 #### Maximum Time
-* Tasks that exceed the maximum time will ignore the impact of importance and be recommended by the Task Machine App first when conditions are met.
+* Tasks that exceed the maximum time will ignore the impact of priority and be recommended by the Task Machine App first when conditions are met.
 
 <a name="anchor5"></a>
 
