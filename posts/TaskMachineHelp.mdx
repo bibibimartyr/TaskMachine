@@ -103,39 +103,110 @@ date: 2022/12/30
 |键|值|
 | ---- | ---- |
 |标题|当前任务的标题|
-|类别|当前任务的父任务标题|
 |重要程度|当前任务的重要程度|
+|类别|当前任务的父任务标题|
+|类别重要程度|当前父任务的重要程度|
 |时长|当前任务所预计的时间|
 
 4. [快捷指令模板](https://www.icloud.com/shortcuts/e431a19b179b4a10844a16c116fce615)
 
 # [联系我](mailto:bibibimartyr@outlook.com)
+
  <a name="anchor"></a>
-# User Guide
 
-## Usage Scenarios of Task Machine
+# Help Documentation
+## Purpose
+1. Do you have a lot of things you want to do, but most of them just stay in your plans and never get implemented?
+2. Do you want to make a plan to prepare for an exam but find that the plan cannot keep up with changes, so it just remains on paper?
+3. How to balance study and daily life during exam preparation and make good use of every day in the long run?
+4. Have you given up making plans because you have never executed them?
+5. Do you always want to learn something but never do it for various strange reasons?
+- This app is designed for this purpose, it can **truly face those seemingly elusive ideas in your heart and put them into practice one by one**.
 
-The tasks in Task Machine mainly refer to tasks that require a lot of time, repetition, and energy. For example, studying and exercising. Task Machine is not suitable for other tasks, such as going out to pick up a delivery.
+## Usage Scenarios for Task Machine
+- Tasks in the Task Machine mainly refer to tasks that **require a lot of time, repetition, and effort**. Such as studying and exercising. The Task Machine is not suitable for other tasks: such as going out to pick up a package.
+
+## Overview
+- The Task Machine app provides **a complete set of processes from obtaining tasks, recording timing, to opening relevant apps and system functions related to tasks.** The less resistance there is, the easier it is for you to put it into practice. All you need to do is ask the Task Machine app what to do now? and then click start. You don't need to worry about what to do now, nor do you need to open the system's Do Not Disturb mode, open the app related to this task, and then start after the countdown. Everything can be done automatically, and you just need to focus on the task itself. All of this is attributed to the built-in iOS app-Shortcuts.
+1. The Task Machine app recommends the most recommended task for you based on the current time, your location, and the information related to the task. [the most recommended task](#anchor4)
+2. You can quickly obtain the most recommended task through Siri or other convenient methods. [Place Prediction](#anchor5)
+3. After starting a task, you can continue to use the Shortcuts app to complete other related tasks, such as opening system functions (focus mode), opening related apps (fitness app, note app), and recording data to other apps (iOS built-in calendar, Numbers). [Shortcuts](#anchor6)
 
 ## Getting Started
+1. Imagine the Task Machine app as an NPC in a game. Its role is to provide you with a recommended task based on your current time and location, reduce unnecessary mental consumption, and let you focus more on the present. However, the Task Machine cannot create something out of nothing, so you need to add tasks first...
+2. Add tasks and set their conditions (time period and location) and importance for each task, and repeat this step.
+3. Tell the Task Machine where you are, and it will provide you with a recommended task. Adjust the expected time, and click start.
+4. Long press "X" to end in advance, or after the countdown ends normally for one minute, you can press the button next to “ended” to extend the end time to the current time.
 
-Think of Task Machine App as an NPC in a game. Its role is to provide you with a suitable task based on your current time and location, reducing unnecessary mental energy consumption. You don't need to arrange things yourself, allowing you to focus more on the present moment. However, Task Machine cannot create something out of nothing. You need to add tasks first...
-Add tasks and set their conditions and importance level for each task. Repeat this step for each task.
-Tell Task Machine where you are, and it will provide you with a suitable task. Adjust the estimated time and click start.
-Long press "X" to end the task early.
-## Most Suitable Task
+<a name="anchor4"></a>
 
-This is the core feature of this app. After you tell Task Machine where you are, it will filter out the tasks that meet the current conditions based on the current time and the location you selected. Then, among these filtered tasks, it will calculate the most suitable task based on the time span and importance level of each task from the last time it was done until now. After you click start, Task Machine will refresh the time span of the task to 0. As time passes, the time span will continue to increase, serving as the basis for the next calculation.
-Therefore, the task calculated by Task Machine App must be a task that has not been done for a period of time, has a relatively high importance level, and meets the current time and location.
-However, no matter how the machine calculates, only the user knows best what they should do at the moment. Therefore, you can switch to other tasks that meet the current conditions in the upper right corner of the recommended task view.
-## ShortCuts
+## The most recommended task
+1. This is the core of the software. After you tell the task machine where you are, the Task Machine app will filter out tasks that meet the current conditions based on the current time and location you selected. Then, among these filtered tasks, based on the time length from the last time each task was done to now and their importance, the app calculates the most recommended task. When you click Start, the time length for that task will be reset to 0. As time goes on, the time length will increase, which will be used as the basis for the next calculation.
+2. Therefore, the task calculated by the Task Machine app must be a task **that has not been done for a while, is relatively important, and meets the current time and location**.
+3. However, no matter how the machine calculates it,** only the user knows best what they should do at the moment**. Therefore, you can switch to other tasks that meet the current conditions by clicking the button in the upper right corner of the recommended task view.
+### Further discussion
+* The discussion about the most recommended task does not end here. You may have seen some inexplicable options in the settings. These options are used to adjust the strategy of the Task Machine app for recommending tasks. For more information, please refer to [video(Chinese)](https://www.bilibili.com/video/BV1cT411Q7UD/?share_source=copy_web&vd_source=64d14a42b8e9a57824dbf4e590cb4bb1).
+#### Parent and child tasks
+You can adjust the parent-child relationship between tasks in the task list by **dragging and dropping**. Dragging a task to the **+ button** will remove the parent-child relationship between the tasks. The Task Machine app's recommendation strategy is as follows:
 
-Turn on this option in the settings and enter a name for the quick command. Then create a quick command with the same name in the Quick Command App. The quick command will automatically run when you start a task.
-The information input for the quick command includes a dictionary: you can use this information in combination with the shortcuts to achieve many personalized functions.
- |Key |	Value |
+|Reading| Exercising| Project(no sub-tasks)|
+| ---- | ---- | ---- |
+|Three Body|Stretching| x|
+|A song of Ice and Fire|Running|x|
+| Code：The Hidden Language of Computer Hardware and Software |Strength training|x|
+
+- Here, there are two parent tasks and their three sub-tasks, as well as one task without any sub-tasks.
+1. First, in order to ensure that all sub-tasks can be filtered out by the app when they meet their own conditions, the app must ensure that the parent task can also be filtered out. Therefore, the condition of the parent task is the union of all its sub-task conditions, and you cannot directly modify the condition of the parent task. It changes as the sub-task conditions change.
+2. The Task Machine app first filters out all parent tasks that meet the conditions and tasks without sub-tasks. Assuming that all three tasks above meet the current conditions, the app will pick the most recommended task based on the importance and time length from the last time the task was done to now.
+3. Suppose the most recommended task now is reading, then the Task Machine will calculate the time length and importance of each sub-task that meets the conditions again and find the most recommended one. After clicking Start, the time length of this sub-task and its parent task will be reset to 0.
+4. Suppose the most recommended task now is Project, then after clicking Start, the time length of that task will be reset to 0.
+
+#### Valid Record:
+1. The Task Machine App will refresh the time length to 0 after starting a task, which means that the Task Machine App thinks you have just completed the task, and therefore, the Task Machine App will not recommend this task again for some time in the future. However, if you immediately end the task by long-pressing "X" after starting it for some reason, an unreasonable situation will occur.
+2. Therefore, this is the significance of valid records. If the actual time spent on a task does not exceed the duration set by the valid record, the Task Machine App will not refresh the time length of that task. Neither subtasks nor parent tasks will be refreshed. The next recommended task will still be this task.
+#### Fragmented Time
+
+|English|
+| ---- |
+|Learn English words (only need fragmented time)|
+|Learn English grammar|
+|English listening|
+|Write English composition|
+|Reading|
+
+1. There is also an intermediate state between effective and ineffective, because some tasks do not require a whole period of time but only need some fragmented time to complete, such as learning English words. I only need 10 minutes to do it. At this time, after I have finished learning English words for 10 minutes, if I want to continue to do other tasks related to English, I cannot let the Task Machine App refresh the time length of its parent task - English to 0. I only need to refresh the time length of the subtask - learning English words.
+2. This is the significance of fragmented time. If the actual time spent on a subtask does not exceed the duration set by the fragmented time, the Task Machine App will only refresh the time length of that subtask and will not refresh the time length of its parent task.
+#### Suspension
+1. You can find this option in the detail view of each task, which is enabled by default. If you turn it off, the Task Machine App will not recommend this task for you.
+2. This mechanism is suitable for such a scenario: the final exams are coming soon, and you may need to disable tasks that are unrelated to the exams first, such as exercising. Enable them after the exam.
+3. When a parent task is turned off, all its subtasks will be turned off.
+4. When a subtask is turned on, its parent task will be forced to turn on.
+#### Maximum Time
+* Tasks that exceed the maximum time will ignore the impact of importance and be recommended by the Task Machine App first when conditions are met.
+
+<a name="anchor5"></a>
+
+## Place Prediction
+* You can quickly get recommended tasks through Siri or other shortcuts, please see [video(Chinese)](https://www.bilibili.com/video/BV1n84y1A7qd/?share_source=copy_web&vd_source=64d14a42b8e9a57824dbf4e590cb4bb1)
+    1. In the shortcut, you can find an action called "Get the most recommended Task at `place`”. There are two ways to use this shortcut:
+    2. Fill in the location, click "Done", and run the shortcut. You can add this shortcut to the desktop for quick access to tasks.
+    3. Use Place prediction, add this action, do not need to fill in any place, click "Done", and run the shortcut. The app will automatically determine your location based on the SSID of the Wi-Fi you are connected to.
+    4. Of course, you can also combine the above two methods to expand its usability.
+1. You can change the name of this shortcut, for example, you can change it to "What should I do now?", and then ask Siri, "What should I do now?" to call this shortcut.
+
+<a name="anchor6"></a>
+## Shortcuts
+1. After starting, you can still use shortcuts to help you with other things. [video(Chinese)](https://www.bilibili.com/video/BV1SP4y1Y7fe/?share_source=copy_web&vd_source=64d14a42b8e9a57824dbf4e590cb4bb1)
+2. Open this option in the settings and enter the name of a shortcut. Then create a shortcut with the same name in the Shortcuts app. When you start a task, this shortcut will automatically run.
+3. The information entered for the shortcut contains such a dictionary: You can use this information to combine with the shortcut to achieve many personalized functions.
+
+|key|value|
 | ---- | ---- |
- |Title	 |The title of the current task |
- |Category	 |The parent task title of the current task |
- |Importance Level	 |The importance level of the current task |
- |Duration	 |The estimated time for the current task |
-# [Contact Me](mailto:bibibimartyr@outlook.com)
+|title|the title of the current task|
+|priority|the priority of the current task|
+|superTask|the superTask of the current task|
+|superTaskPriority|The priority of the parent task of the current task|
+|duration|The estimated duration of the current task|
+
+# [Contact me](mailto:bibibimartyr@outlook.com)
+
